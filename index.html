@@ -11,11 +11,11 @@
         <header>🔒 Gerador de Senhas</header>
     
         <main>
+            <!---->
             <div class="password-display">
                 <input type="text" id="password" readonly>
                 <button id="copy-btn">📋</button>
             </div>
-
             <div class="options">
                 <div class="option">
                     <label for="length">Tamanho: <span id="length-value">12</span></label>
@@ -26,11 +26,15 @@
                     <label for="uppercase">Letrs maiúsculas (A-Z)</label>
                 </div>
                 <div class="option">
-                    <input type="numbers" id="numbers" checked>
+                    <input type="checkbox" id="numbers" checked>
                     <label for="numbers">Números (0-9)</label>
                 </div>
-                <div class="option"></div>
+                <div class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">Símbolos (!@#$%)</label>
+                </div>
             </div>
+            <button id="generate-btn">Gerar senha</button>
         </main>
     </div>
     <script src="scripts.js"></script>
