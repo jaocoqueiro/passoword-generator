@@ -4,9 +4,24 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: rgb(0, 119, 255);
+    --secundary-color: rgb(101, 0, 184);
+    --container-color: #2d2d2d;
+    --bg-color: #1a1a1a;
+    --text-color: #fff;   
+
+}
+
+.light-mode {
+    --container-color: #fff;
+    --text-color: #1a1a1a;
+    --bg-color: #d8d8d8;
+    transition: 0.5 ease;
+}
+
 body {
-    /*background-image: linear-gradient(rgba(0, 0, 255, 0),rgb(0, 0, 255));*/
-    background-image: radial-gradient(circle, rgb(255, 255, 255), rgb(0, 70, 180), rgb(70, 0, 128));
+    background-image: linear-gradient(to right bottom, var(--primary-color), var(--secundary-color));
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh; 
     display: flex;
@@ -16,13 +31,13 @@ body {
 }
 
 .container {
-    background-color: #0e0e0e;
-    color: #fff;
+    background-color: var(--container-color);
+    color: var(--text-color);
     padding: 2em;
     width: 100%;
     max-width: 450px;
     border-radius: 15px;
-    border: solid 2px #fff;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -37,14 +52,18 @@ h1{
     margin-right: 1em;
 }
 
-#senha {
+#password {
+    background: var(--bg-color);
+    color:  var(--text-color);
+    border: solid 2px #444;
     border-radius: 8px;
     padding: 15px;
     font-size: 1.1em;
     width: 100%;
+    text-align: center;
 }
 
-.senha-display {
+.password-display {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -52,6 +71,7 @@ h1{
     border: none;
 }
 
+/* Opções */
 .options {
     margin-bottom: 1.5em;
 }
@@ -63,25 +83,37 @@ h1{
     gap: 10px;
 }
 
+input[type=range] {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+
 /* Botões */
 #theme-toggle {
     background: none;
     border: none;
     font-size: 1.5em;
     cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 #copy-btn {
+    background: var(--primary-color);
     font-size: 1em;
     padding: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 1s ease;
+    transition: background 0.5s ease;
 }
 
 #generate-btn{
-    background-image: radial-gradient(rgb(0, 98, 255), rgb(46, 0, 83));
+    background-image: linear-gradient(to right bottom, var(--primary-color), var(--secundary-color));
     color: #fff;
     width: 100%;
     padding: 15px;
@@ -90,22 +122,23 @@ h1{
     border-radius: 8px;
     cursor: pointer;
     border: none;
-    transition: background 1s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 #theme-toggle:hover {
     transform: rotate(30deg);
-    transition: 0.5s ease-in-out;
+    
 }
 
 #copy-btn:hover {
-    background: linear-gradient( to bottom right, rgb(0, 70, 180), rgb(70, 0, 128));
+    background: var(--secundary-color);
 }
 
 #generate-btn:hover {
-    background-image: radial-gradient(rgb(0, 70, 182), rgb(33, 1, 59));
-    color: #fff;
+    transform: translateY(-2px);
 }
 /* Responsividade */
 
-
+@media screen {
+    
+}
