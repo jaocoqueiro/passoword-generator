@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Elementos DOM
     const themeToggle = document.getElementById('theme-toggle');
     const passwordDisplay = document.getElementById('password');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Atualizar valor do range
     lengthRange.addEventListener('input', function() {
         lengthValue.textContent = this.value;
-    })
+    });
 
     // Gerar senha
     genarateBtn.addEventListener('click', gerarSenha);
@@ -37,28 +37,45 @@ document.addEventListener('DOMContentLoaded', function() {
             const randomIndex = Math.floor(Math.random() * characteres.length);
             senha += characteres[randomIndex];
         }
-
+        
         // Exibir senha
         passwordDisplay.value = senha;
-    }
-
+    };
+    
+    
     // Copiar senha
-    copyBtn.addEventListener('click', function(){
-        if(!passwordDisplay.value) return;
-        
-        navigator.clipboard.writeText(passwordDisplay.value)
-        .then(() => {
-            //Feedback Visual 
-            const originalText = copyBtn.textContent;
-            this.textContent = '✅';
+        const textoCopiadoClipboard = async (text) => {
+    const originalText = copyBtn.textContent;
+    try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = '✅';
 
-            setTimeout (() => {
-                copyBtn.textContent = originalText;
-            }, 2000);
-        });
-    });
+        setTimeout(() => {
+            copyBtn.textContent = originalText;
+        }, 2000);
+    } catch (e) {
+        console.error('Erro ao copiar:', e);
+        copyBtn.textContent = '❌';
 
-    // Alternar light mode
+        setTimeout(() => {
+            copyBtn.textContent = originalText;
+        }, 2000);
+    }
+};
+
+const copy = () => {
+    copyBtn.onclick = () => {
+        const text = passwordDisplay.value === "" 
+            ? "Não copiado" 
+            : passwordDisplay.value;
+        textoCopiadoClipboard(text);
+        console.log('Texto copiado:', text);
+    };  
+};
+ 
+copy();
+
+    // Alternar tema
     themeToggle.addEventListener('click', function(){
         document.body.classList.toggle('light-mode');
         this.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
