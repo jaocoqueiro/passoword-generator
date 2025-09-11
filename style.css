@@ -96,6 +96,8 @@ input[type="checkbox"] {
 
 input:focus {
     outline: none;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.5);
 }
 
 /* Botões */
