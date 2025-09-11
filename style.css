@@ -38,6 +38,7 @@ body {
     max-width: 450px;
     border-radius: 15px;
     transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header {
@@ -69,6 +70,7 @@ h1{
     gap: 10px;
     margin-bottom: 1.5em;
     border: none;
+    outline: none; 
 }
 
 /* Opções */
@@ -92,6 +94,9 @@ input[type="checkbox"] {
     height: 18px;
 }
 
+input:focus {
+    outline: none;
+}
 
 /* Botões */
 #theme-toggle {
@@ -139,6 +144,58 @@ input[type="checkbox"] {
 }
 /* Responsividade */
 
-@media screen {
-    
+/* Mobile (até 480px) */
+@media only screen and (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 1.5em;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    #password {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    #copy-btn {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    #generate-btn {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+/* Tablet (481px até 768px) */
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+    .container {
+        max-width: 85%;
+        padding: 2em;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    #password {
+        font-size: 1.05em;
+        padding: 14px;
+    }
+
+    #copy-btn {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    #generate-btn {
+        font-size: 1.05em;
+        padding: 14px;
+    }
 }
