@@ -10,6 +10,20 @@ O projeto permite personalizar a senha gerada, copiar para a área de transferê
 
 ---
 
+## 🚀 Demonstração
+
+👉 [Acesse o projeto online](https://passoword-generator-one.vercel.app/)  
+
+---
+
+## 🛠️ Tecnologias
+
+* **HTML5**
+* **CSS3 (responsivo e com temas claro/escuro)**
+* **JavaScript (DOM, eventos e clipboard API)**
+
+---
+
 ## 🚀 Funcionalidades
 
 - Geração de senhas aleatórias com:
@@ -22,12 +36,6 @@ O projeto permite personalizar a senha gerada, copiar para a área de transferê
 - Copiar senha com **um clique**  
 - Alternar entre **modo escuro 🌙 e modo claro ☀️**  
 - Interface responsiva (funciona bem em celular, tablet e desktop)
-
----
-
-## 🖼️ Demonstração
-
-![Preview do Gerador de Senhas](https://passoword-generator-one.vercel.app/)
 
 ---
 
@@ -58,13 +66,31 @@ O projeto permite personalizar a senha gerada, copiar para a área de transferê
 
 ---
 
-## 🛠️ Tecnologias
+## 📱 Responsividade
 
-* **HTML5**
-* **CSS3 (responsivo e com temas claro/escuro)**
-* **JavaScript (DOM, eventos e clipboard API)**
-
+* **Mobile (até 480px):** layout mais compacto (container reduzido, botões e inputs menores)  
+* **Tablet (481px até 768px):** espaçamento intermediário (container maior, fontes e botões levemente maiores)  
+* **Desktop (acima de 768px):** versão completa com todos os estilos padrão  
 ---
+
+### Versão Desktop
+---
+#### Dark Mode
+<div align="center">
+  <img src="prints/print-desktop.png" alt="Versão Desktop do Login" width="600">
+</div>
+
+#### Light Mode
+<div align="center">
+  <img src="prints/print-desktop-light.png" alt="Versão Desktop do Login" width="600">
+</div>
+
+### Versão Mobile
+---
+<div align="center">
+  <img src="prints/print-mobile.jpeg" alt="Versão Mobile do Login" width="300">
+</div>
+
 ## 📄 Licença
 
 Este projeto está sob a licença MIT.
